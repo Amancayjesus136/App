@@ -9,6 +9,13 @@ router.get('/listado', async (req, res) => {
         })
 })
 
+router.get('/detalle/:id', async (req, res) => {
+    let eventos = await EventoService.getEventoById(req.params.id);
+    res.json({
+        'eventos': eventos
+    })
+})
+
 router.get('/detalle/:id', (req, res) => {
     res.send('Detalle de eventos')
 })

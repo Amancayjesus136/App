@@ -6,4 +6,4 @@ const evento = new Schema({
     fecha   : String,
     notas   : String,
 });
-module.exports = mongoose.model('Evento', evento);
+module.exports = mongoose.model('eventos', evento);

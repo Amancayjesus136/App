@@ -1,10 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const Evento =  require('../services/EventoService')
+const EventoService =  require('../services/EventoService')
 
 router.get('/listado', async (req, res) => {
         let eventos = await EventoService.getAllEventos();
-    res.send('Listado de eventos')
+        res.json({
+            'eventos': eventos
+        })
 })
 
 router.get('/detalle/:id', (req, res) => {

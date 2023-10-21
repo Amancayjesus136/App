@@ -14,7 +14,7 @@ database.once('open', () => {
   console.log('Base de datos conectada');
 });
 
-const eventos = require('./eventos');
+const eventos = require('./routes/eventos');
 app.use('/eventos', eventos);
 
 app.listen(port, () => {

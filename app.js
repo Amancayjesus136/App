@@ -19,6 +19,9 @@ database.once('connected', () => {
 const eventos = require ('./routes/eventos')
 app.use('/eventos', eventos)
 
+const amigos = require ('./routes/amigos')
+app.use('/amigos', amigos)
+
 app.listen(port, () =>{
     console.log('Ingresa a localhost:3000')
 })

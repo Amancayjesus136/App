@@ -1,9 +1,9 @@
-const Evento = require('../models/Amigo');
+const Amigo = require('../models/Amigo');
 
-exports.getAllEventos = async() => {
+exports.getAllAmigos = async() => {
     return await Amigo.find()
 }
 
-exports.getEventoById = async(id) => {
+exports.getAmigoById = async(id) => {
     return await Amigo.findById(id);
 }

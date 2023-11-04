@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const EventoService =  require('../services/EventoService')
 
+/*<-------------LISTADO-------------->*/
 router.get('/listado', async (req, res) => {
         let eventos = await EventoService.getAllEventos();
         res.json({
@@ -9,6 +10,7 @@ router.get('/listado', async (req, res) => {
         })
 })
 
+/*<-------------DETALLE-------------->*/
 router.get('/detalle/:id', async (req, res) => {
     let eventos = await EventoService.getEventoById(req.params.id);
     res.json({
@@ -18,6 +20,17 @@ router.get('/detalle/:id', async (req, res) => {
 
 router.get('/detalle/:id', (req, res) => {
     res.send('Detalle de eventos')
+})
+
+/*<-------------REGISTRAR-------------->*/
+router.get('/registrar', async (req, res) => {
+    await EventoService.insertEvento({
+        nombre: 'hola',
+        fecha: '1',
+        lugar: '2',
+        notas: '3',
+    });
+   res.send('Registrado correctamente')
 })
 
 module.exports = router

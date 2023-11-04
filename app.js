@@ -5,6 +5,7 @@ const port = 3000
 
 var cors = require('cors');
 app.use(cors({origin: 'http://localhost:8100'}))
+app.use(express.json());
 
 mongoose.connect("mongodb://0.0.0.0:27017/llego_bd")
 const database = mongoose.connection

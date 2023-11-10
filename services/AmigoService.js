@@ -7,3 +7,8 @@ exports.getAllAmigos = async() => {
 exports.getAmigoById = async(id) => {
     return await Amigo.findById(id);
 }
+
+exports.insertAmigo = async(data) => {
+    let amigo = new Amigo(data);
+    return await amigo.save();
+}  

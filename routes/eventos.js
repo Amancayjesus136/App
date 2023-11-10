@@ -24,14 +24,7 @@ router.get('/detalle/:id', (req, res) => {
 
 /*<-------------REGISTRAR-------------->*/
 router.post('/registrar', async (req, res) => {
-    console.log(req.body)
-    return res.send('prueba');
-    await EventoService.insertEvento({
-        nombre: 'hola',
-        fecha: '1',
-        lugar: '2',
-        notas: '3',
-    });
+    await EventoService.insertEvento(req.body);
    res.send('Registrado correctamente')
 })
 

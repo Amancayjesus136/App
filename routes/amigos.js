@@ -22,7 +22,9 @@ router.get('/detalle/:id', (req, res) => {
 
 router.post('/registrar', async (req, res) => {
     await AmigoService.insertAmigo(req.body);
-   res.send('Registrado correctamente amigos')
+    res.json({
+        'mensaje' : 'Registrado contacto correctamente'
+    })
 })
 
 module.exports = router

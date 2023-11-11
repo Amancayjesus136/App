@@ -25,7 +25,9 @@ router.get('/detalle/:id', (req, res) => {
 /*<-------------REGISTRAR-------------->*/
 router.post('/registrar', async (req, res) => {
     await EventoService.insertEvento(req.body);
-   res.send('Registrado correctamente')
+    res.json({
+        'mensaje' : 'Registrado correctamente'
+    })
 })
 
 module.exports = router
